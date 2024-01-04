@@ -1,0 +1,15 @@
+server:
+  port: 0
+
+spring:
+  application:
+    name: user_service
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true # Eureka Server로부터 Eureka Server에 등록된 다른 인스턴스의 정보를 주기적으로 갱신하는 옵션
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    instance-id: ${spring.cloud.client.hostname}:${spring.application.instance_id:${random.value}}
