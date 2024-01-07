@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import springmsa.springmsa_user_service.vo.Greeting;
 
 @Slf4j
 @RestController
@@ -17,9 +18,11 @@ public class WelcomeController {
 
     private final Environment environment;
 
+    private final Greeting greeting;
+
     @GetMapping("/welcome")
     public String welcome() {
-        return "Welcome to the user service !";
+        return greeting.getMessage();
     }
 
     @GetMapping("/message")

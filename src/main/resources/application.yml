@@ -4,6 +4,19 @@ server:
 spring:
   application:
     name: user-service
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        format_sql: true
+        show_sql: true
+        default_batch_fetch_size: 500
+  datasource:
+    url: jdbc:h2:tcp://localhost/~/h2/msauser
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
 
 eureka:
   client:
@@ -13,3 +26,6 @@ eureka:
       defaultZone: http://localhost:8761/eureka
   instance:
     instance-id: ${spring.cloud.client.hostname}:${spring.application.instance_id:${random.value}}
+
+greeting:
+  message: Welcome to the Simple E-commerce.
