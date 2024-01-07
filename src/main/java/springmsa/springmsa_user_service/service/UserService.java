@@ -5,4 +5,8 @@ import springmsa.springmsa_user_service.entity.Users;
 
 public interface UserService {
     Users createUser(UserDto userDto);
+
+    UserDto findUserById(Long id);
+
+    Iterable<Users> findAll();
 }

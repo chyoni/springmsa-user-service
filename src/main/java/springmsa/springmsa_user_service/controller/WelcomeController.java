@@ -13,7 +13,7 @@ import springmsa.springmsa_user_service.vo.Greeting;
 @Slf4j
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/user")
+@RequestMapping("/users/health")
 public class WelcomeController {
 
     private final Environment environment;
