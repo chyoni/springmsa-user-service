@@ -6,4 +6,5 @@ import springmsa.springmsa_user_service.entity.Users;
 
 @Repository
 public interface UserRepository extends JpaRepository<Users, Long> {
+    Users findByEmail(String email);
 }
